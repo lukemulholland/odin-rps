@@ -1,19 +1,16 @@
+//create two variables to store human score and computer score
+let humanScore = 0;
+let computerScore = 0;
+
 //create a variable that can store a random number
 //generate a random number
 //map random number to one of the string variables (rock, paper, scissors)
 //store the string output
 
 function getComputerChoice() {
-    let randomNumber = Math.random();
-    let computerChoice;
-    if (randomNumber <= 0.33) {
-        computerChoice = "rock"
-    } else if (randomNumber <= 0.66) {
-        computerChoice = "paper"
-    } else {
-        computerChoice = "scissors"
-    }
-    return computerChoice
+    const choices = ["rock", "paper", "scissors"];
+    const randomIndex = Math.floor(Math.random() * 3);
+    return choices[randomIndex];
 }
 
 //create a variable that can store human choice (rock, paper, scissors)
@@ -36,7 +33,6 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         alert("Tie!")
-        // return { humanScore, computerScore };
     } else
 
     switch(humanChoice) {
@@ -69,14 +65,33 @@ function playRound(humanChoice, computerChoice) {
             break;
         default:
             console.log("Invalid choice. Please choose rock, paper, or sissors.")
-            // return { humanScore, computerScore };
     }
-    // return { humanScore, computerScore };
 }
 
-//create two variables to store human score and computer score
-let humanScore = 0;
-let computerScore = 0;
+// function playRound(humanChoice, computerChoice) {
+//     let result = '';
+//     if (humanChoice === computerChoice) {
+//         result = "Tie!";
+//     } else {
+//         switch(humanChoice) {
+//             case "rock":
+//                 result = computerChoice === "scissors" ? "You win! Rock beats scissors." : "You lose! Paper beats rock.";
+//                 computerChoice === "scissors" ? humanScore++ : computerScore++;
+//                 break;
+//             case "paper":
+//                 result = computerChoice === "rock" ? "You win! Paper beats rock." : "You lose! Scissors beat paper.";
+//                 computerChoice === "rock" ? humanScore++ : computerScore++;
+//                 break;
+//             case "scissors":
+//                 result = computerChoice === "paper" ? "You win! Scissors beat paper." : "You lose! Rock beats scissors.";
+//                 computerChoice === "paper" ? humanScore++ : computerScore++;
+//                 break;
+//             default:
+//                 result = "Invalid choice. Please choose rock, paper, or scissors.";
+//         }
+//     }
+//     alert(result);
+// }
 
 //create a function that plays five rounds
 
